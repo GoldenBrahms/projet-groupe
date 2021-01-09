@@ -1,0 +1,59 @@
+/*
+Theme Name: Projet-groupe
+Theme URI: https://wordpress.bbxdesign.com
+Author: bbx
+Author URI: https://bbxdesign.com
+Description: Le thème du Guide WordPress.
+Version: 1.0
+Tags: blue, orange, light, three-columns, left-sidebar, responsive-layout, editor-style, featured-images, full-width-template, sticky-post, theme-options, translation-ready, accessibility-ready
+*/
+
+body {
+    margin:0;
+}
+
+.hello{
+	color: black;
+	margin-top: 50px;
+}
+
+#Login {
+    width: 100%;
+    height: 100vh;
+    background-color: red;
+    display: flex;
+}
+
+#right-login {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color:blue;
+}
+#right-login-elements {
+    height: 500px;
+    width: 200px;
+    background-color: indigo;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+input {
+    width: 200px;
+    height: 25px;
+    margin:10px;
+}
+button {
+    cursor: pointer;
+    width: 100px;
+}
+
+#left-login {
+    width: 50%;
+    background-color:grey;
+}
+
