@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title><?php the_title() ?></title>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css" type="text/css">
   </head>
   <body>
@@ -37,13 +38,17 @@
         margin-right:80px;
         font-size:22px;
     }
+    a {
+        text-decoration:none;
+        color:white;
+    }
   </style>
   <div class="header">
     
   </div>
   <div class="sous-header">
     <ul class="subheader">
-        <li>DEVIS</li>
+        <li><a href="/creer-une-devis">DEVIS</a></li>
         <li>PROJET</li>
         <li>ENTREPRISE</li>
         <li>INTERLOCUTEUR</li>
@@ -51,4 +56,4 @@
         <li>OPCO</li>
     </ul>
   </div>
-  <h1>TABLEAU DE BORD</h1>
+ 

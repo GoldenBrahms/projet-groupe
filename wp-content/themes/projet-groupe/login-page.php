@@ -1,7 +1,7 @@
 <?php 
 /* Template Name: Custom Login Page*/
 global $wpdb;
-
+get_header('login');
 if ($_POST) {
     $username = $wpdb->escape($_POST['user']);
     $password = $wpdb->escape($_POST['password']);
@@ -98,6 +98,7 @@ if ($_POST) {
             }
         </style>
         <div class="right-login-elements">
+            <i class='bx bxs-user'></i>
             <input type="text" name="user" id="user" placeholder="identifiant"/>
             <input type="password" name="password" id="password" class="password" placeholder="mot de passe"/>
             <input class="connexion" type="submit" value="CONNEXION"></input>

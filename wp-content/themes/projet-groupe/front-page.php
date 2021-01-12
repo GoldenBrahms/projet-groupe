@@ -23,7 +23,8 @@ if ($_POST) {
 
 
 ?>
-
+<?php
+ if (!is_user_logged_in( )) :?>
 <div class="login">
 <div id="left_login" class="left_login">
     <div class="gestion">
@@ -105,3 +106,10 @@ if ($_POST) {
 </form>
 </div>
 
+<?php else :?>
+<?php get_header('cdf')?>
+    <?php global $current_user; wp_get_current_user(); ?>
+<?php if ( is_user_logged_in() ) { 
+ echo 'Bonjour ' . $current_user->user_login . "\n";} 
+else { wp_loginout(); } ?>
+<?php endif ?>
