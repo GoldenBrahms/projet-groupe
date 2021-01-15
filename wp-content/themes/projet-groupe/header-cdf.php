@@ -1,59 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
+      <?php wp_head();?>
     <meta charset="utf-8">
     <title><?php the_title() ?></title>
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="style.css" type="text/css">
   </head>
   <body>
-  <style type="text/css">
-  body {
-      margin:0;
-  }
-    .header {
-        width: 100%;
-        height:50px;
-        background-color:#4938E0;
-    }
-    .sous-header {
-        width: 100%;
-        height:30px;
-        background-color:#1B2132;
-        display:flex;
-        justify-content:center;
-        padding-top:10px;
-    }
-    h1 {
-        text-align: center;
-        color:orange;
-    }
-    .subheader {
-        margin-top:0;
-        display:flex;
-        color:white;
-        list-style-type:none;
-    }
-    li {
-        margin-right:80px;
-        font-size:22px;
-    }
-    a {
-        text-decoration:none;
-        color:white;
-    }
-  </style>
   <div class="header">
     
   </div>
   <div class="sous-header">
     <ul class="subheader">
         <li><a href="/creer-une-devis">DEVIS</a></li>
-        <li>PROJET</li>
-        <li>ENTREPRISE</li>
-        <li>INTERLOCUTEUR</li>
-        <li>FORMATEUR</li>
-        <li>OPCO</li>
+        <li><a href="#">PROJET</a></li>
+        <li><a href="#">ENTREPRISE</a></li>
+        <li><a href="#">INTERLOCUTEUR</a></li>
+        <li><a href="#">FORMATEUR</a></li>
+        <li><a href="#">OPCO</a></li>
     </ul>
   </div>
  

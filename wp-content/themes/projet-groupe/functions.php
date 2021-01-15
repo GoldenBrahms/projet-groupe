@@ -1,15 +1,11 @@
 <?php 
 
+add_action('wp_enqueue_scripts', 'add_theme_style');
 function add_theme_style() {
-    wp_enqueue_style( 'style', get_stylesheet_uri());
-    wp_enqueue_style('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
-    wp_enqueue_style('icons', 'https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css');
-    wp_enqueue_script('jquery');
-    wp_enqueue_script('popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', array('jquery'), 1, true);
-    wp_enqueue_script('boostrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', array('jquery', 'popper'), 1, true);
-    
+
+    wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css');
 }
-add_action('wp-enqueue-style', 'add_theme_style');
+
 
 function dire_bonjour(){
 	echo '<h2 class="hello"> Hello World !!</h2>';
