@@ -1,24 +1,19 @@
 <?php 
+    // intégration du fichier avec les appels add_action()
+    require_once get_template_directory().'/inc/actions.php';
 
-add_action('wp_enqueue_scripts', 'add_theme_style');
-function add_theme_style() {
+    // intégration du fichier avec les fonctions de template
+    require_once get_template_directory().'/inc/template-functions.php';
 
-    wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css');
-}
+    // Intégration du fichier avec les appels add_filter().
+    //require_once get_template_directory() . '/inc/filters.php';
 
+    // Intégration du fichier avec les fonctions de filtrage.
+    //require_once get_template_directory() . '/inc/filter-functions.php';
 
-function dire_bonjour(){
-	echo '<h2 class="hello"> Hello World !!</h2>';
-}
-add_action( 'bonjour', 'dire_bonjour');
+    // Walker Nav Menu
+    require_once get_template_directory().'/classes/class-walker-menu.php';
+    require_once get_template_directory().'/classes/class-walker-menu-user.php';
 
-function process_custom_login_form() {
- // Validate the username or email field before submitting
- if ( isset($_POST['custom_user'])) {
-    $custom_user =  trim($_POST['custom_user']);
-    echo '<h2 class="hello"> Hello World !!</h2>';
-}
-}
-
-add_action("login", 'process_custom_login_form');
+    // Plugin 
 

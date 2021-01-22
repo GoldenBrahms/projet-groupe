@@ -1,7 +1,11 @@
 <?php 
-/* Template Name: Tableau de bord*/
-get_header('cdf');
+/* 
+    Page contenant la liste de tous les projets
+    issues de la base de données WordPress
+*/
 ?>
+<?php get_header()?>
+<!--
 <style type="text/css">
     .search {
         width:100%;
@@ -50,6 +54,7 @@ get_header('cdf');
         background-color:#B0B3B7;
     }
 </style>
+-->
 <?php 
     global $wpdb; 
     $resultats = $wpdb->get_results($wpdb->prepare('SELECT * FROM wp_client'));

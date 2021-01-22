@@ -1,5 +1,5 @@
 <?php 
-/* Template Name: Custom Login Page*/
+
 global $wpdb;
 
 if ($_POST) {
@@ -36,7 +36,67 @@ if ($_POST) {
 </div>
 <form method="post" class="right_login">
 <style type="text/css">
-           
+            body {
+                margin: 0;
+            }
+            .login {
+                height:100vh;
+                display: flex;
+                background-color:red;
+            }
+            .right_login {
+                width: 50%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background-color:#1B2132;
+            }
+            .left_login {
+                width: 50%;
+                display:flex;
+                align-items:center;
+                background-color:#D1D2D4;
+            }
+            .gestion {
+                margin-left: 200px;
+            }
+            h1 {
+                margin:10px;
+                color :#1B2132;
+                font-size:52px;
+            }
+            .password {
+                margin-bottom: 10px;
+                padding: 10px;
+                border-radius: 5px;
+            }
+            .right-login-elements {
+                height: 500px;
+                width: 400px;
+                background-color: indigo;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+            .custom-error p {
+                margin: 0;
+            }
+            .connexion {
+                background-color: #F84313;
+                color:white;
+                border:none;
+                cursor:pointer;
+                height:30px;
+                border-radius:5px;
+            }
+            input {
+                width: 350px;
+                height: 45px;
+                margin:10px;
+            }
         </style>
         <div class="right-login-elements">
             <input type="text" name="user" id="user" placeholder="identifiant"/>
