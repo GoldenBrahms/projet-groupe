@@ -1,70 +1,65 @@
 <?php
 /*
-Template Name: FormFormation
+Template du formulaire d'ajout d'une Formation
 */
 ?>
-
-<form class="row">
-    <div class="col-md-4">
-        <label for="validationServer01" class="form-label">First name</label>
-        <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required>
-        <div class="valid-feedback">
-        Looks good!
+<?php
+    global $wpdb;
+    // récupération des champs
+    if ($_POST) {
+        $nomFormation       =$_POST['nom_formation'];
+        $objFormation       =$_POST['obj_formation'];
+        $objProFormation    =$_POST['obj_pro_formation'];
+        $parcPedaPrevi      =$_POST['parc_peda_previ'];
+        // ajout des données dans la table
+        $wpdb->insert('wp_listeformation', 
+            array(
+                'NOM_FORMATION'         =>$nomFormation,
+                'OBJ_FORMATION'         =>$objFormation,
+                'OBJ_PRO_FORMATION'     =>$objProFormation,
+                'PARCOUR_PEDA_PREVI'    =>$parcPedaPrevi,
+            )
+        );
+        echo "<script>window.location = '" .site_url("/nos-formations")."'</script>";
+    }
+?>
+<?php get_header()?>
+<div class="main">
+    <h1>Ajouter une formation</h1>
+    <form class="row" method="POST">
+        <div class="col-md-6">
+            <label for="validationServer01" class="form-label">Libellé de la formation</label>
+            <input type="text" name="nom_formation" class="form-control" id="validationServer01" required>
+            <div class="valid-feedback">
+            
+            </div>
         </div>
-    </div>
-    <div class="col-md-4">
-        <label for="validationServer02" class="form-label">Last name</label>
-        <input type="text" class="form-control is-valid" id="validationServer02" value="Otto" required>
-        <div class="valid-feedback">
-        Looks good!
+        <div class="col-md-6">
+            <label for="validationServer02" class="form-label">Objectifs de la formation</label>
+            <input type="text" name="obj_formation" class="form-control" id="validationServer02" required>
+            <div class="valid-feedback">
+            
+            </div>
         </div>
-    </div>
-    <div class="col-md-4">
-        <label for="validationServerUsername" class="form-label">Username</label>
-        <div class="input-group has-validation">
-        <span class="input-group-text" id="inputGroupPrepend3">@</span>
-        <input type="text" class="form-control is-invalid" id="validationServerUsername" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
-        <div id="validationServerUsernameFeedback" class="invalid-feedback">
-            Please choose a username.
+        <div class="col-md-6">
+            <label for="validationServer03" class="form-label">Objectifs professionnels de la formation</label>
+            <input type="text" name="obj_pro_formation" class="form-control" id="validationServer03" value="" required>
+            <div class="valid-feedback">
+            
+            </div>
         </div>
+        <div class="col-md-6">
+            <label for="validationServer04" class="form-label">Parcours pédagogique prévisionnel</label>
+            <input type="text" name="parc_peda_previ" class="form-control" id="validationServer04" value="" required>
+            <div class="valid-feedback">
+            
+            </div>
         </div>
-    </div>
-    <div class="col-md-6">
-        <label for="validationServer03" class="form-label">City</label>
-        <input type="text" class="form-control is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback" required>
-        <div id="validationServer03Feedback" class="invalid-feedback">
-        Please provide a valid city.
+        <div class="col-md-6">
+            <input class="btn btn-primary" type="submit" value="ajouter"></input>
         </div>
-    </div>
-    <div class="col-md-3">
-        <label for="validationServer04" class="form-label">State</label>
-        <select class="form-select is-invalid" id="validationServer04" aria-describedby="validationServer04Feedback" required>
-        <option selected disabled value="">Choose...</option>
-        <option>...</option>
-        </select>
-        <div id="validationServer04Feedback" class="invalid-feedback">
-        Please select a valid state.
-        </div>
-    </div>
-    <div class="col-md-3">
-        <label for="validationServer05" class="form-label">Zip</label>
-        <input type="text" class="form-control is-invalid" id="validationServer05" aria-describedby="validationServer05Feedback" required>
-        <div id="validationServer05Feedback" class="invalid-feedback">
-        Please provide a valid zip.
-        </div>
-    </div>
-    <div class="col-12">
-        <div class="form-check">
-        <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
-        <label class="form-check-label" for="invalidCheck3">
-            Agree to terms and conditions
-        </label>
-        <div id="invalidCheck3Feedback" class="invalid-feedback">
-            You must agree before submitting.
-        </div>
-        </div>
-    </div>
-    <div class="col-12">
-        <button class="btn btn-primary" type="submit">Submit form</button>
-    </div>
-</form>
+    </form>
+</div>
+    
+</div>
+<?php get_footer(); ?>
